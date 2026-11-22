@@ -4,9 +4,10 @@
 
 ### Prerequisites
 
-- [Go](https://golang.org/dl/) >=1.22.2
-- [Node.js](https://nodejs.org/en/download/) >=18.17.0 (For pre-commit hooks)
-- [Yarn](https://yarnpkg.com/getting-started/install) >=1.22.21 (For pre-commit hooks)
+- [Go](https://golang.org/dl/) >=1.22.2 (`go.mod`; CI uses 1.24)
+- [staticcheck](https://staticcheck.dev/docs/getting-started/) (For the pre-commit hook, which runs `scripts/lint.sh`)
+- [Node.js](https://nodejs.org/en/download/) >=18.17.0 (For the commit-msg hook)
+- [Yarn](https://yarnpkg.com/getting-started/install) >=1.22.21 (For the commit-msg hook)
 
 Dependencies are managed with Go modules (go.mod) and will be installed automatically when you first
 run tests.
@@ -66,7 +67,7 @@ See [here](https://go.dev/wiki/Modules#publishing-a-release).
 
 ```bash
 git tag -a v0.2.0 -m "chore: Release v0.2.0"
-git push --tags
+git push origin v0.2.0
 ```
 
 Be sure to add a release for the tag with notes following this template:
@@ -91,7 +92,7 @@ GOPROXY=proxy.golang.org go list -m github.com/newstack-cloud/ls-builder@v0.2.0
 
 ## Commit scope
 
-**blueprint**
+Scopes are optional, and commits here don't use them.
 
 Example commit:
 
